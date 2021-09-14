@@ -3,8 +3,9 @@ package main
 import "github.com/01-edu/z01"
 
 func main() {
-
+	
 }
+
 func IsNegative(nb int) {
 	if nb < 0 {
 		z01.PrintRune('T')
@@ -14,3 +15,4 @@ func IsNegative(nb int) {
 		z01.PrintRune('\n')
 	}
 }
+
