@@ -11,4 +11,5 @@ func IsNegative(nb int) {
 }
 
 func main() {
+
 }
