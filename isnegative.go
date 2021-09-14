@@ -3,7 +3,7 @@ package main
 import "github.com/01-edu/z01"
 
 func main() {
-	
+
 }
 
 func IsNegative(nb int) {
@@ -15,4 +15,3 @@ func IsNegative(nb int) {
 		z01.PrintRune('\n')
 	}
 }
-
