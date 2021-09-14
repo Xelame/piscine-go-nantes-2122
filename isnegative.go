@@ -10,4 +10,8 @@ func IsNegative(nb int) {
 	}
 }
 
-func main()
+func main() {
+	IsNegative(1)
+	IsNegativ(0)
+	IsNegative(-1)
+}
