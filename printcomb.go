@@ -16,8 +16,12 @@ func PrintComb() {
 					z01.PrintRune(hundreds)
 					z01.PrintRune(tens)
 					z01.PrintRune(units)
-					z01.PrintRune(',')
-					z01.PrintRune(' ')
+					if units == '9' &&  tens == '8' && hundreds == '7'{
+						z01.PrintRune('\n')
+					} else {
+						z01.PrintRune(',')
+						z01.PrintRune(' ')
+					}
 				}
 			}
 		}
