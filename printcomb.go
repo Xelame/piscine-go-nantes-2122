@@ -12,7 +12,7 @@ func PrintComb() {
 		for tens := '0'; tens <= '9'; tens++ {
 			for units := '0'; units <= '9'; units++ {
 				// Testing if they're in ascending order
-				if units < tens && tens < hundreds {
+				if units > tens && tens > hundreds {
 					z01.PrintRune(hundreds)
 					z01.PrintRune(tens)
 					z01.PrintRune(units)
