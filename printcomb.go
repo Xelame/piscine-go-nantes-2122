@@ -3,7 +3,8 @@ package piscine
 import "github.com/01-edu/z01"
 
 /*
-Function to print all unique combinations of three different digit in ascending order 
+Function to print all unique combinations of three different digit in ascending order
+Output : Suit of answers separate by a comma 
 */
 func PrintComb() {
 	// Generator for our three different digits
