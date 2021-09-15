@@ -12,7 +12,6 @@ func PrintNbr(nb int) {
 		for nb/power > 10 {
 			power *= 10
 		}
-
 		if nb > power {
 			var count int32 = 1
 			for i := 1; i <= 9; i++ {
