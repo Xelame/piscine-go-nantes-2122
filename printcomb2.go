@@ -15,7 +15,7 @@ func PrintComb2() {
 					// Testing if they're in ascending order
 					if units2 <= units1 && tens2 <= tens1 {
 						if units1 == '0' && units2 == '0' && tens1 == '0' && tens2 == '0' {
-							somethings := 0
+							units1 == '1'
 						} else {
 							z01.PrintRune(tens2)
 							z01.PrintRune(units2)
