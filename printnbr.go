@@ -24,7 +24,7 @@ func PrintNbr(nb int) {
 			}
 		}
 	}
-	if nb < 9 {
+	if nb > 0 {
 		var count int32 = 1
 		for i := 1; i <= 9; i++ {
 			if i == nb {
