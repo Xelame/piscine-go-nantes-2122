@@ -25,8 +25,8 @@ func PrintNbr(nb int) {
 		}
 	}
 	if nb < 9 {
-		var count int32 = 1
-		for i := 1; i <= 9; i++ {
+		var count int32 = 0
+		for i := 0; i <= 9; i++ {
 			if i == nb {
 				z01.PrintRune(48 + count)
 			} else {
