@@ -22,7 +22,6 @@ func PrintNbr(nb int) {
 				if i*powerNumber < nb && nb < (i+1)*powerNumber {
 					z01.PrintRune(48 + count)
 					nb %= powerNumber
-
 				} else {
 					count++
 				}
@@ -39,5 +38,4 @@ func PrintNbr(nb int) {
 			}
 		}
 	}
-
 }
