@@ -7,37 +7,37 @@ func PrintNbr(nb int) {
 		z01.PrintRune('-')
 		nb -= 2 * nb
 	}
-	if nb > 100 {
-		var count int32 = 1
-		for i := 1; i <= 9; i++ {
-			if i*100 < nb && nb < (i+1)*100 {
-				z01.PrintRune(48 + count)
-				nb -= i * 100
-			} else {
-				count++
+	for nb > 10 {
+		powerNumber := 1
+		limits := 0
+		for powerExp := 0; powerExp <= limits; powerExp++ {
+			powerNumber = powerNumber * 10
+			if 10*powerNumber < nb && nb < 90*powerNumber {
+				limits++
 			}
 		}
-		if nb > 10 {
+		if 9*powerNumber > nb && nb > powerNumber {
 			var count int32 = 1
 			for i := 1; i <= 9; i++ {
-				if i*10 < nb && nb < (i+1)*10 {
+				if i*powerNumber < nb && nb < (i+1)*powerNumber {
 					z01.PrintRune(48 + count)
-					nb -= i * 10
-				} else {
-					count++
-				}
-			}
-		}
-		if nb > 0 {
-			var count int32 = 1
-			for i := 1; i <= 9; i++ {
-				if i == nb {
-					z01.PrintRune(48 + count)
-					nb -= i
+					nb %= powerNumber
+
 				} else {
 					count++
 				}
 			}
 		}
 	}
+	if nb > 0 {
+		var count int32 = 1
+		for i := 1; i <= 9; i++ {
+			if i == nb {
+				z01.PrintRune(48 + count)
+			} else {
+				count++
+			}
+		}
+	}
+
 }
