@@ -8,20 +8,17 @@ func PrintNbr(nb int) {
 		nb -= 2 * nb
 	}
 	for nb > 10 {
-		powerNumber := 1
-		limits := 0
-		for powerExp := 0; powerExp <= limits; powerExp++ {
-			powerNumber = powerNumber * 10
-			if 10*powerNumber < nb && nb < 90*powerNumber {
-				limits++
-			}
+		power := 1
+		for nb/power > 10 {
+			power *= 10
 		}
-		if 9*powerNumber > nb && nb > powerNumber {
+
+		if nb > power {
 			var count int32 = 1
 			for i := 1; i <= 9; i++ {
-				if i*powerNumber < nb && nb < (i+1)*powerNumber {
+				if i*power < nb && nb < (i+1)*power {
 					z01.PrintRune(48 + count)
-					nb %= powerNumber
+					nb %= power
 				} else {
 					count++
 				}
