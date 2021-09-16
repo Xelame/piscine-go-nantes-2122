@@ -17,7 +17,7 @@ func PrintNbr(number int) {
 			power *= 10
 		}
 		// init some variable
-		var count int32 = 1
+		var count rune = 1
 		testing := power / 10
 		// surrounding our digit * 1^power
 		for i := 1; i <= 9; i++ {
