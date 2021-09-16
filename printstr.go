@@ -5,7 +5,6 @@ import (
 )
 
 func PrintStr(s string) {
-	sChangeable := []rune(s)
 	for _, i := range s {
 		z01.PrintRune(i)
 	}
