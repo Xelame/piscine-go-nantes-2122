@@ -18,7 +18,7 @@ func PrintNbr(number int) {
 		}
 		// init some variable
 		var count int32 = 1
-		testing := power/10
+		testing := power / 10
 		// surrounding our digit * 1^power
 		for i := 1; i <= 9; i++ {
 			if i*power < number && number < (i+1)*power {
@@ -38,6 +38,6 @@ func PrintNbr(number int) {
 	// Testing delayed for the last digit (unit)
 	if number > 0 {
 		count := rune(number % 10)
-		z01.PrintRune(48+count)
+		z01.PrintRune(48 + count)
 	}
 }
