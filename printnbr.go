@@ -9,7 +9,7 @@ func PrintNbr(number int) {
 		number = -number
 	}
 	var reversedNumberInList []int
-	for number > 10 {
+	for number >= 10 {
 		reversedNumberInList = append(reversedNumberInList, number%10)
 		number /= 10
 	}
