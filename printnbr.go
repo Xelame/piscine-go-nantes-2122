@@ -8,7 +8,7 @@ func PrintNbr(number int) {
 	// Test if number is negative
 	if number < 0 {
 		z01.PrintRune('-')
-		number -= 2 * number
+		number = -number
 	}
 	// Create a loop to set up my power of 10
 	for number > 10 {
