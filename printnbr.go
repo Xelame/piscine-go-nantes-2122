@@ -1,8 +1,6 @@
 package piscine
 
-import (
-	"github.com/01-edu/z01"
-)
+import "github.com/01-edu/z01"
 
 func PrintNbr(number int) {
 	// Test if number is negative
@@ -16,7 +14,7 @@ func PrintNbr(number int) {
 	}
 	reversedNumberInList = append(reversedNumberInList, number%10)
 	for end := len(reversedNumberInList) - 1; end >= 0; end-- {
-		if reversedNumberInList[end] > 10 {
+		if reversedNumberInList[end] > 0 {
 			z01.PrintRune(rune(48 + reversedNumberInList[end]))
 		} else {
 			z01.PrintRune(rune(48 - reversedNumberInList[end]))
