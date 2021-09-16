@@ -2,32 +2,36 @@ package piscine
 
 import "github.com/01-edu/z01"
 
-func PrintNbr(nb int) {
-	if nb < 0 {
+func PrintNbr(number int) {
+	// if is a negative number
+	if number < 0 {
 		z01.PrintRune('-')
-		nb -= 2 * nb
+		number -= 2 * number
 	}
-	for nb > 10 {
+	// search the max power of 10 to read the first digit of number 
+	for number > 10 {
 		power := 1
-		for nb/power > 10 {
+		for number / power > 10 {
 			power *= 10
 		}
-		if nb > power {
+		// search which digits is bitween 1 and 9
+		if number > power {
 			var count int32 = 1
 			for i := 1; i <= 9; i++ {
-				if i*power < nb && nb < (i+1)*power {
+				if i*power < number && number < (i+1)*power {
 					z01.PrintRune(48 + count)
-					nb %= power
+					number %= power
 				} else {
 					count++
 				}
 			}
 		}
 	}
-	if nb > 0 {
+	// Same thing just for the last digit
+	if number > 0 {
 		var count int32 = 1
 		for i := 1; i <= 9; i++ {
-			if i == nb {
+			if i == number {
 				z01.PrintRune(48 + count)
 			} else {
 				count++
