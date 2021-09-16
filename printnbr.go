@@ -1,8 +1,6 @@
 package piscine
 
-import (
-	"github.com/01-edu/z01"
-)
+import "github.com/01-edu/z01"
 
 func PrintNbr(number int) {
 	// Test if number is negative
@@ -10,34 +8,13 @@ func PrintNbr(number int) {
 		z01.PrintRune('-')
 		number = -number
 	}
-	// Create a loop to set up my power of 10
+	var reversedNumberInList []int
 	for number > 10 {
-		power := 1
-		for number/power > 10 {
-			power *= 10
-		}
-		// init some variable
-		var count rune = 1
-		testing := power / 10
-		// surrounding our digit * 1^power
-		for i := 1; i <= 9; i++ {
-			if i*power < number && number < (i+1)*power {
-				z01.PrintRune(48 + count)
-				// test for the presence of one 0 or more
-				for number%power < testing {
-					z01.PrintRune(48)
-					testing /= 10
-				}
-				// moving on to the digit in the right
-				number %= power
-			} else {
-				count++
-			}
-		}
+		reversedNumberInList = append(reversedNumberInList, number%10)
+		number /= 10
 	}
-	// Testing delayed for the last digit (unit)
-	if number > 0 {
-		count := rune(number % 10)
-		z01.PrintRune(48 + count)
+	reversedNumberInList = append(reversedNumberInList, number%10)
+	for end := len(reversedNumberInList) - 1; end >= 0; end-- {
+		z01.PrintRune(rune(48 + reversedNumberInList[end]))
 	}
 }
