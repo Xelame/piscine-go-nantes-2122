@@ -19,7 +19,7 @@ func PrintNbr(number int) {
 				z01.PrintRune(48 + count)
 				for number%power < power/10*testing {
 					z01.PrintRune(48)
-					testing++
+					testing*=10
 				}
 				number %= power
 			} else {
