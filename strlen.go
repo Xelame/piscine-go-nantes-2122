@@ -2,8 +2,11 @@ package piscine
 
 func StrLen(s string) int {
 	count := 0
-	for i := range s {
-		count = i
+	for index, value := range s {
+		count++
+		if value > 127 {
+			count++
+		}
 	}
-	return count + 1
+	return count
 }
