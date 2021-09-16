@@ -5,7 +5,7 @@ func StrLen(s string) int {
 	for _, value := range s {
 		count++
 		if value > 127 {
-			count++
+			count--
 		}
 	}
 	return count
