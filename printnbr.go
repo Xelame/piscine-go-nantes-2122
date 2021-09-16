@@ -8,10 +8,10 @@ func PrintNbr(number int) {
 		z01.PrintRune('-')
 		number -= 2 * number
 	}
-	// search the max power of 10 to read the first digit of number 
+	// search the max power of 10 to read the first digit of number
 	for number > 10 {
 		power := 1
-		for number / power > 10 {
+		for number/power > 10 {
 			power *= 10
 		}
 		// search which digits is bitween 1 and 9
