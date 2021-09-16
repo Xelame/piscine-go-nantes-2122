@@ -24,7 +24,7 @@ func PrintNbr(number int) {
 			} else {
 				count++
 			}
-			}
+		}
 	}
 	if number > 0 {
 		var count int32 = 1
