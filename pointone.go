@@ -1,5 +1,6 @@
 package piscine
 
 func PointOne(n *int) {
-	return 1
+	*n += 1
+	fmt.Println(*n)
 }
