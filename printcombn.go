@@ -6,7 +6,7 @@ func PrintCombN(number int) {
 	table := [9]int{}
 	isAscencingOrder := true
 	isFirst := true
-	for table[0] < 9 {
+	for table[0] <= 9 {
 		isAscencingOrder = true
 		if number > 1 {
 			for test := number; test > 1; test-- {
