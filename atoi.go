@@ -12,7 +12,6 @@ func Atoi(aString string) int {
 		} else {
 			return 0
 		}
-
 	}
 	if aString[0] == 45 {
 		result = -result
