@@ -4,8 +4,8 @@ import (
 	"github.com/01-edu/z01"
 )
 
-func PrintStr(s string) {
-	for _, i := range s {
-		z01.PrintRune(i)
+func PrintStr(aString string) {
+	for _, letter := range aString {
+		z01.PrintRune(letter)
 	}
 }
