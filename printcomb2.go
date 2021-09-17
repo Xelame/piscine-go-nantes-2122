@@ -7,7 +7,7 @@ Function to print all unique combinations of three different digit in ascending 
 Output : Suit of answers separate by a comma
 */
 func PrintComb2() {
-	isBeginning = true
+	isBeginning := true
 	// Generator for our 2 differents two-digits
 	for tens2 := '0'; tens2 <= '9'; tens2++ {
 		for units2 := '0'; units2 <= '9'; units2++ {
