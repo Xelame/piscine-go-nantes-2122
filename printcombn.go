@@ -8,7 +8,6 @@ func PrintCombN(number int) {
 	isFirst := true
 	for table[0] < 9 {
 		isAscencingOrder = true
-		table[number-1]++
 		if number > 1 {
 			for test := number; test > 1; test-- {
 				if table[test-1]%10 == 0 && table[test-1] != 0 {
@@ -32,6 +31,7 @@ func PrintCombN(number int) {
 				z01.PrintRune(rune(48 + table[index]))
 			}
 		}
+		table[number-1]++
 	}
 	z01.PrintRune('\n')
 }
