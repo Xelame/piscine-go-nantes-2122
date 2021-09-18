@@ -13,6 +13,7 @@ func PrintCombN(number int) {
 				if table[test-1]%10 == 0 && table[test-1] != 0 {
 					table[test-2]++
 					table[test-1] %= 10
+					table[test-1] += table[test-2]
 				}
 			}
 			for lower := number; lower > 1; lower-- {
