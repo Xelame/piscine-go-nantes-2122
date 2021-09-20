@@ -1,14 +1,9 @@
 package piscine
 
 func StrRev(s string) string {
-	sChangeable := []byte(s)
-	var temp byte
-	for beginning := 0; beginning < len(sChangeable); beginning++ {
-		if beginning < len(sChangeable)-beginning-1 {
-			temp = sChangeable[beginning]
-			sChangeable[beginning] = sChangeable[len(sChangeable)-beginning-1]
-			sChangeable[len(sChangeable)-beginning-1] = temp
-		}
+	runes := []rune(s)
+	for beginning, end := 0, len(runes)-1; beginning < end; beginning, end = beginning+1, end-1 {
+		runes[beginning], runes[end] = runes[end], runes[beginning]
 	}
-	return string(sChangeable)
+	return string(runes)
 }
