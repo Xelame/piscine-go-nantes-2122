@@ -5,7 +5,7 @@ func FindNextPrime(nb int) int {
 		return 2
 	}
 	countDivideBy := 0
-	for diviser := 2; diviser < nb && countDivideBy == 0; diviser++ {
+	for diviser := Sqrt(nb); diviser > 1 && countDivideBy == 0; diviser-- {
 		if nb%diviser == 0 {
 			countDivideBy += 1
 		}
