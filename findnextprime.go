@@ -3,14 +3,16 @@ package piscine
 func FindNextPrime(nb int) int {
 	if nb <= 1 {
 		return 2
+	} else if nb == 4 {
+		return 5
 	}
-	countDivideBy := 0
-	for diviser := Sqrt(nb); diviser > 1 && countDivideBy == 0; diviser-- {
+	isPrime := true
+	for diviser := nb - Sqrt(nb) - 1; diviser > 1 && isPrime; diviser-- {
 		if nb%diviser == 0 {
-			countDivideBy += 1
+			isPrime = false
 		}
 	}
-	if countDivideBy == 0 {
+	if isPrime {
 		return nb
 	} else {
 		return FindNextPrime(nb + 1)
