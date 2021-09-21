@@ -1,6 +1,9 @@
 package piscine
 
 func FindNextPrime(nb int) int {
+	if nb < 0 {
+		nb = -nb
+	}
 	result := 0
 	countDivideBy := 0
 	var listOfPrimeNumber []int
