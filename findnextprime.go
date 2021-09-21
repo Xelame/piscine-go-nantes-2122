@@ -7,7 +7,7 @@ func FindNextPrime(nb int) int {
 	result := 0
 	countDivideBy := 0
 	var listOfPrimeNumber []int
-	for number := 1; number < nb*10; number++ {
+	for number := 1; number < nb*2; number++ {
 		countDivideBy = 0
 		for diviser := 1; diviser <= number; diviser++ {
 			if number%diviser == 0 {
