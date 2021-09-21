@@ -5,7 +5,7 @@ func IterativePower(nb int, power int) int {
 		return 0
 	}
 	if power <= 1 {
-		return nb
+		return 1
 	} else {
 		return nb * IterativePower(nb, power-1)
 	}
