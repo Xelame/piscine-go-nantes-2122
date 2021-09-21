@@ -4,24 +4,15 @@ func FindNextPrime(nb int) int {
 	if nb < 0 {
 		return 2
 	}
-	result := 0
 	countDivideBy := 0
-	var listOfPrimeNumber []int
-	for number := 1; number < nb+5; number++ {
-		countDivideBy = 0
-		for diviser := 1; diviser <= number; diviser++ {
-			if number%diviser == 0 {
-				countDivideBy += 1
-			}
-		}
-		if countDivideBy == 2 {
-			listOfPrimeNumber = append(listOfPrimeNumber, number)
+	for diviser := 1; diviser <= nb; diviser++ {
+		if nb%diviser == 0 {
+			countDivideBy += 1
 		}
 	}
-	for _, i := range listOfPrimeNumber {
-		if i <= nb {
-			result = i
-		}
+	if countDivideBy == 2 {
+		return nb
+	} else {
+		return FindNextPrime(nb + 1)
 	}
-	return result
 }
