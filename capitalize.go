@@ -7,7 +7,7 @@ func Capitalize(aString string) string {
 		listOfCharacter[0] -= 32
 	}
 	for i := 1; i < len(listOfCharacter); i++ {
-		if 63 >= listOfCharacter[i-1] && listOfCharacter[i-1] >= 32 {
+		if (63 >= listOfCharacter[i-1] && listOfCharacter[i-1] >= 32) || (96 >= listOfCharacter[i-1] && listOfCharacter[i-1] >= 91) || (177 >= listOfCharacter[i-1] && listOfCharacter[i-1] >= 123) {
 			if IsLower(string(listOfCharacter[i])) {
 				listOfCharacter[i] -= 32
 			}
