@@ -8,11 +8,14 @@ func PrintNbrBase(number int, base string) {
 	isOkay := true
 	listOfNumberInMyBase := []rune(base)
 	for i := len(listOfNumberInMyBase) - 1; i > 0; i-- {
-		if listOfNumberInMyBase[i] == listOfNumberInMyBase[i-1] {
-			z01.PrintRune('N')
-			z01.PrintRune('V')
-			isOkay = false
+		for j := i - 1; j >= 0; j-- {
+			if listOfNumberInMyBase[i] == listOfNumberInMyBase[j] && isOkay {
+				z01.PrintRune('N')
+				z01.PrintRune('V')
+				isOkay = false
+			}
 		}
+
 	}
 	if isOkay {
 		// Test if number is negative
