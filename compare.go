@@ -8,5 +8,4 @@ func Compare(a, b string) int {
 	} else {
 		return 0
 	}
-
 }
