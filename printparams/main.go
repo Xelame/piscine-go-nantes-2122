@@ -7,20 +7,10 @@ import (
 )
 
 func main() {
-	fichier := os.Args
-	for _, arg := range fichier[1:] {
-		begin := 0
-		isFirst := true
-		for i := len(arg) - 1; i >= 0; i-- {
-			if arg[i] == '/' && isFirst {
-				begin = i - 1
-				isFirst = !isFirst
-			}
-		}
-		for i, value := range arg {
-			if i >= begin {
-				z01.PrintRune(value)
-			}
+	fichier := os.Args[1:]
+	for _, arg := range fichier {
+		for _, value := range arg {
+			z01.PrintRune(value)
 		}
 		z01.PrintRune('\n')
 	}
