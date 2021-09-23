@@ -9,18 +9,14 @@ func PrintNbrInOrder(number int) {
 			z01.PrintRune('-')
 		}
 	*/
-	var reversedNumberInList []int
-	for number >= 10 || number <= -10 {
-		reversedNumberInList = append(reversedNumberInList, number%10)
+	var NumberInList []int
+	for number >= 10 {
+		NumberInList = append(NumberInList, number%10)
 		number /= 10
 	}
-	reversedNumberInList = append(reversedNumberInList, number%10)
-	SortIntegerTable(reversedNumberInList)
-	for end := range reversedNumberInList {
-		if reversedNumberInList[end] > 0 {
-			z01.PrintRune(rune(48 + reversedNumberInList[end]))
-		} else {
-			z01.PrintRune(rune(48 - reversedNumberInList[end]))
-		}
+	NumberInList = append(NumberInList, number%10)
+	SortIntegerTable(NumberInList)
+	for end := range NumberInList {
+		z01.PrintRune(rune(48 + NumberInList[end]))
 	}
 }
