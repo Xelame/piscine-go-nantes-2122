@@ -9,7 +9,7 @@ import (
 func main() {
 	fichier := os.Args
 	revfichier := []string{}
-	for i := len(fichier) - 1; i > 1; i-- {
+	for i := len(fichier) - 1; i > 0; i-- {
 		revfichier = append(revfichier, fichier[i])
 	}
 	for _, arg := range revfichier {
