@@ -14,7 +14,7 @@ func main() {
 		if arg == "--upper" {
 			converter = 64
 		}
-		if IsNumeric(arg) {
+		if IsNumeric(arg) && 0 < BasicAtoi(arg) && BasicAtoi(arg) < 27 {
 			listOfInt = append(listOfInt, BasicAtoi(arg))
 		}
 	}
