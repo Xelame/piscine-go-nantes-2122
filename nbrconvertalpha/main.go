@@ -11,9 +11,10 @@ func main() {
 	listOfInt := []int{}
 	var converter rune = 96
 	for _, arg := range fichier[1:] {
-		if arg == "--upper" || !IsNumeric(arg) {
+		if arg == "--upper" {
 			converter = 64
-		} else {
+		}
+		if IsNumeric(arg) {
 			listOfInt = append(listOfInt, BasicAtoi(arg))
 		}
 	}
