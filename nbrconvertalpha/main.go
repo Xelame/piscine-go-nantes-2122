@@ -43,10 +43,6 @@ func BasicAtoi(aString string) int {
 	return result
 }
 
-func IsAlpha(aRune rune) bool {
-	return (65 <= int(aRune) && int(aRune) <= 90) || (97 <= int(aRune) && int(aRune) <= 122)
-}
-
 func IsNumeric(aString string) bool {
 	isNum := true
 	for _, value := range aString {
