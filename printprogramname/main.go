@@ -11,7 +11,7 @@ func main() {
 	for i, strValue := range fichier {
 		if i == len(fichier)-1 {
 			for _, runeValue := range strValue {
-				if rune(runeValue) != '/' {
+				if rune(runeValue) != '/' && rune(runeValue) != '.' {
 					z01.PrintRune(rune(runeValue))
 				}
 			}
