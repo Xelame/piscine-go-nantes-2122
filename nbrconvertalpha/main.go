@@ -23,7 +23,6 @@ func main() {
 		} else {
 			z01.PrintRune(rune(32))
 		}
-
 	}
 	z01.PrintRune('\n')
 }
