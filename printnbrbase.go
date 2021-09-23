@@ -9,7 +9,7 @@ func PrintNbrBase(number int, base string) {
 	listOfNumberInMyBase := []rune(base)
 	for i := len(listOfNumberInMyBase) - 1; i > 0; i-- {
 		for j := i - 1; j >= 0; j-- {
-			if (listOfNumberInMyBase[i] == listOfNumberInMyBase[j]) && listOfNumberInMyBase[j] != 45 && listOfNumberInMyBase[j] != 43 && isOkay {
+			if (listOfNumberInMyBase[i] == listOfNumberInMyBase[j]) && listOfNumberInMyBase[j] != 45 && listOfNumberInMyBase[j] != 43 && isOkay && len(listOfNumberInMyBase) < 38 {
 				z01.PrintRune('N')
 				z01.PrintRune('V')
 				isOkay = false
