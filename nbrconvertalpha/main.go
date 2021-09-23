@@ -19,7 +19,6 @@ func main() {
 	}
 	for _, value := range listOfInt {
 		z01.PrintRune(rune(value + int(converter)))
-
 	}
 	z01.PrintRune('\n')
 }
