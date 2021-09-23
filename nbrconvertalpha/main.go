@@ -18,7 +18,12 @@ func main() {
 		}
 	}
 	for _, value := range listOfInt {
-		z01.PrintRune(rune(value + int(converter)))
+		if IsAlpha(rune(value + int(converter))) {
+			z01.PrintRune(rune(value + int(converter)))
+		} else {
+			z01.PrintRune(rune(32))
+		}
+
 	}
 	z01.PrintRune('\n')
 }
@@ -31,4 +36,8 @@ func BasicAtoi(aString string) int {
 		powerOfTen *= 10
 	}
 	return result
+}
+
+func IsAlpha(aRune rune) bool {
+	return (65 <= int(aRune) && int(aRune) <= 90) || (97 <= int(aRune) && int(aRune) <= 122)
 }
