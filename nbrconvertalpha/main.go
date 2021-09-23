@@ -8,20 +8,20 @@ import (
 
 func main() {
 	haveSomething := false
-	fichier := os.Args[:1]
+	fichier := os.Args
 	listOfInt := []int{}
 	var converter rune = 96
-	for _, arg := range fichier {
+	for _, arg := range fichier[1:] {
 		if arg == "--upper" {
 			converter = 64
-		} else if 0 < BasicAtoi(arg) && BasicAtoi(arg) < 27 {
+		} else if IsNumeric(arg) && 0 < BasicAtoi(arg) && BasicAtoi(arg) < 27 {
 			listOfInt = append(listOfInt, BasicAtoi(arg))
 		} else {
 			listOfInt = append(listOfInt, ' ')
 		}
 	}
 	for _, value := range listOfInt {
-		if IsAlpha(rune(value+int(converter))) || !(48 <= value && value <= 57) && value != 32 {
+		if value != 32 {
 			z01.PrintRune(rune(value + int(converter)))
 		} else {
 			z01.PrintRune(rune(32))
