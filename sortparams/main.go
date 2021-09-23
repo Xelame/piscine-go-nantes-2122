@@ -30,7 +30,7 @@ func main() {
 func SortTable(table []string) {
 	for min_index := 0; min_index < len(table)-1; min_index++ {
 		for index := min_index + 1; index < len(table); index++ {
-			if Sum(table[index]) < Sum(table[min_index]) {
+			if table[index] < table[min_index] {
 				Swap(&table[index], &table[min_index])
 			}
 		}
@@ -39,12 +39,4 @@ func SortTable(table []string) {
 
 func Swap(a *string, b *string) {
 	*a, *b = *b, *a
-}
-
-func Sum(table string) int {
-	total := 0
-	for _, value := range table {
-		total += int(value)
-	}
-	return total
 }
