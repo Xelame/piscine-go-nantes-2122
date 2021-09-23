@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+	haveSomething := false
 	fichier := os.Args
 	listOfInt := []int{}
 	var converter rune = 96
@@ -22,11 +23,14 @@ func main() {
 	for _, value := range listOfInt {
 		if IsAlpha(rune(value+int(converter))) || !(48 <= value && value <= 57) && value != 32 {
 			z01.PrintRune(rune(value + int(converter)))
+			haveSomething = true
 		} else {
 			z01.PrintRune(rune(32))
 		}
 	}
-	z01.PrintRune('\n')
+	if haveSomething {
+		z01.PrintRune('\n')
+	}
 }
 
 func BasicAtoi(aString string) int {
