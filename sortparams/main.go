@@ -10,21 +10,11 @@ func main() {
 	fichier := os.Args
 	SortTable(fichier)
 	for _, arg := range fichier[1:] {
-		begin := 0
-		isFirst := true
-		for i := len(arg) - 1; i >= 0; i-- {
-			if arg[i] == '/' && isFirst {
-				begin = i - 1
-				isFirst = !isFirst
-			}
+		for _, value := range arg {
+			z01.PrintRune(value)
 		}
-		for i, value := range arg {
-			if i >= begin {
-				z01.PrintRune(value)
-			}
-		}
-		z01.PrintRune('\n')
 	}
+	z01.PrintRune('\n')
 }
 
 func SortTable(table []string) {
