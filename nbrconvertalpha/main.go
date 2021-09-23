@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/01-edu/z01"
@@ -18,7 +17,6 @@ func main() {
 			listOfInt = append(listOfInt, BasicAtoi(arg))
 		}
 	}
-	fmt.Println(listOfInt)
 	for _, value := range listOfInt {
 		if IsAlpha(rune(value+int(converter))) || !(48 <= value && value <= 57) {
 			z01.PrintRune(rune(value + int(converter)))
