@@ -20,4 +20,5 @@ func main() {
 		z01.PrintRune(rune(fichier[begin]))
 		begin++
 	}
+	z01.PrintRune('\n')
 }
