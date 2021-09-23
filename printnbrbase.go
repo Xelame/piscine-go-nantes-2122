@@ -17,7 +17,6 @@ func PrintNbrBase(number int, base string) {
 		}
 	}
 	if isOkay {
-		// Test if number is negative
 		if number < 0 {
 			z01.PrintRune('-')
 		}
