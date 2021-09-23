@@ -8,7 +8,7 @@ import (
 
 func main() {
 	fichier := os.Args
-	SortIntegerTable([]rune(fichier[0]))
+	SortTable(fichier)
 	for _, arg := range fichier[1:] {
 		begin := 0
 		isFirst := true
@@ -27,16 +27,24 @@ func main() {
 	}
 }
 
-func SortIntegerTable(table []rune) {
+func SortTable(table []string) {
 	for min_index := 0; min_index < len(table)-1; min_index++ {
 		for index := min_index + 1; index < len(table); index++ {
-			if table[index] < table[min_index] {
+			if Sum(table[index]) < Sum(table[min_index]) {
 				Swap(&table[index], &table[min_index])
 			}
 		}
 	}
 }
 
-func Swap(a *rune, b *rune) {
+func Swap(a *string, b *string) {
 	*a, *b = *b, *a
+}
+
+func Sum(table string) int {
+	total := 0
+	for _, value := range table {
+		total += int(value)
+	}
+	return total
 }
