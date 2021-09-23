@@ -4,6 +4,11 @@ import "github.com/01-edu/z01"
 
 func PrintNbr(number int) {
 	// Test if number is negative
+	if number == -9223372036854775808 {
+		number = 223372036854775808
+		z01.PrintRune('-')
+		z01.PrintRune('9')
+	}
 	if number < 0 {
 		z01.PrintRune('-')
 		number = -number
