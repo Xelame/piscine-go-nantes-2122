@@ -8,9 +8,14 @@ import (
 
 func main() {
 	fichier := os.Args[0]
-	for _, runeValue := range fichier {
-		if rune(runeValue) != '/' && rune(runeValue) != '.' {
-			z01.PrintRune(rune(runeValue))
+	begin := 0
+	for i := len(fichier) - 1; i >= 0; i-- {
+		if fichier[i] == '/' {
+			begin = i + 1
 		}
+	}
+	for begin < len(fichier) {
+		z01.PrintRune(rune(fichier[begin]))
+		begin++
 	}
 }
