@@ -16,11 +16,10 @@ func PrintNbrBase(number int, base string) {
 			number = -number
 		}
 		var reversedList []int
-		for number >= len(base) {
+		for number > 0 {
 			reversedList = append(reversedList, number%len(base))
 			number /= len(base)
 		}
-		reversedList = append(reversedList, number%len(base))
 		for end := len(reversedList) - 1; end >= 0; end-- {
 			z01.PrintRune(rune(base[reversedList[end]]))
 		}
