@@ -7,9 +7,14 @@ import (
 func PrintNbrBase(number int, base string) {
 	isOkay := true
 	listOfNumberInMyBase := []rune(base)
+	if !IsAlpha(string(listOfNumberInMyBase)) {
+		z01.PrintRune('N')
+		z01.PrintRune('V')
+		isOkay = false
+	}
 	for i := len(listOfNumberInMyBase) - 1; i > 0; i-- {
 		for j := i - 1; j >= 0; j-- {
-			if listOfNumberInMyBase[i] == listOfNumberInMyBase[j] && isOkay {
+			if (listOfNumberInMyBase[i] == listOfNumberInMyBase[j]) && isOkay {
 				z01.PrintRune('N')
 				z01.PrintRune('V')
 				isOkay = false
