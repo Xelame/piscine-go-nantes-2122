@@ -7,9 +7,9 @@ import (
 )
 
 func main() {
-	fichier := os.Args
-	SortTable(fichier[1:])
-	for _, arg := range fichier[1:] {
+	fichier := os.Args[1:]
+	SortTable(fichier)
+	for _, arg := range fichier {
 		for _, value := range arg {
 			z01.PrintRune(value)
 		}
