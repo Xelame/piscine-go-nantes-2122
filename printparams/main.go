@@ -18,7 +18,7 @@ func main() {
 			}
 		}
 		for i, value := range arg {
-			if i > begin {
+			if i >= begin {
 				z01.PrintRune(value)
 			}
 		}
