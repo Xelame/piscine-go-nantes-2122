@@ -6,18 +6,15 @@ func PrintNbr(number int) {
 	// Test if number is negative
 	if number < 0 {
 		z01.PrintRune('-')
+		number = -number
 	}
 	var reversedNumberInList []int
-	for number >= 10 || number <= -10 {
+	for number > 10 {
+	for number >= 10 {
 		reversedNumberInList = append(reversedNumberInList, number%10)
 		number /= 10
 	}
 	reversedNumberInList = append(reversedNumberInList, number%10)
 	for end := len(reversedNumberInList) - 1; end >= 0; end-- {
-		if reversedNumberInList[end] > 0 {
-			z01.PrintRune(rune(48 + reversedNumberInList[end]))
-		} else {
-			z01.PrintRune(rune(48 - reversedNumberInList[end]))
-		}
+		z01.PrintRune(rune(48 + reversedNumberInList[end]))
 	}
-}
