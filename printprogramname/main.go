@@ -12,13 +12,14 @@ func main() {
 	isFirst := true
 	for i := len(fichier) - 1; i >= 0; i-- {
 		if fichier[i] == '/' && isFirst {
-			begin = i + 1
+			begin = i
 			isFirst = !isFirst
 		}
 	}
-	for begin < len(fichier) {
-		z01.PrintRune(rune(fichier[begin]))
-		begin++
+	for i, value := range fichier {
+		if i > begin {
+			z01.PrintRune(value)
+		}
 	}
 	z01.PrintRune('\n')
 }
