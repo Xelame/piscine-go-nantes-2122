@@ -8,7 +8,7 @@ import (
 
 func main() {
 	fichier := os.Args
-	for _, arg := range fichier {
+	for _, arg := range fichier[1:] {
 		begin := 0
 		isFirst := true
 		for i := len(arg) - 1; i >= 0; i-- {
