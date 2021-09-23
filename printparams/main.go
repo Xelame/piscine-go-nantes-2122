@@ -13,7 +13,7 @@ func main() {
 		isFirst := true
 		for i := len(arg) - 1; i >= 0; i-- {
 			if arg[i] == '/' && isFirst {
-				begin = i
+				begin = i - 1
 				isFirst = !isFirst
 			}
 		}
