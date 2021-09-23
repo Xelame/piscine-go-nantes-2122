@@ -8,13 +8,13 @@ func PrintNbr(number int) {
 		z01.PrintRune('-')
 		number = -number
 	}
-	var reversedNumberInList []int
-	for number > 10 {
+	var reversedList []int
 	for number >= 10 {
-		reversedNumberInList = append(reversedNumberInList, number%10)
+		reversedList = append(reversedList, number%10)
 		number /= 10
 	}
-	reversedNumberInList = append(reversedNumberInList, number%10)
-	for end := len(reversedNumberInList) - 1; end >= 0; end-- {
-		z01.PrintRune(rune(48 + reversedNumberInList[end]))
+	reversedList = append(reversedList, number%10)
+	for end := len(reversedList) - 1; end >= 0; end-- {
+		z01.PrintRune(rune(48 + reversedList[end]))
 	}
+}
