@@ -13,8 +13,8 @@ func main() {
 		for _, value := range arg {
 			z01.PrintRune(value)
 		}
+		z01.PrintRune('\n')
 	}
-	z01.PrintRune('\n')
 }
 
 func SortTable(table []string) {
