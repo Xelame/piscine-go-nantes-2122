@@ -15,7 +15,6 @@ func PrintNbrBase(number int, base string) {
 				isOkay = false
 			}
 		}
-
 	}
 	if isOkay {
 		// Test if number is negative
