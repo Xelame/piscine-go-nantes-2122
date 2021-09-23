@@ -26,11 +26,12 @@ func PrintNbrBase(number int, base string) {
 	}
 }
 
-func TestBase(baseTest string) bool {
+func TestBase(s string) bool {
+	baseTest := []rune(s)
 	isOkay := true
 	for i := 0; i < len(baseTest)-1 && isOkay; i++ {
 		for j := i + 1; j < len(baseTest) && isOkay; j++ {
-			if baseTest[i] == baseTest[j] || baseTest[i] == 45 {
+			if baseTest[i] == baseTest[j] || baseTest[i] == '-' {
 				z01.PrintRune('N')
 				z01.PrintRune('V')
 				isOkay = false
