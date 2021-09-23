@@ -7,14 +7,10 @@ import (
 )
 
 func main() {
-	fichier := os.Args
-	for i, strValue := range fichier {
-		if i == len(fichier)-1 {
-			for _, runeValue := range strValue {
-				if rune(runeValue) != '/' && rune(runeValue) != '.' {
-					z01.PrintRune(rune(runeValue))
-				}
-			}
+	fichier := os.Args[0]
+	for _, runeValue := range fichier {
+		if rune(runeValue) != '/' && rune(runeValue) != '.' {
+			z01.PrintRune(rune(runeValue))
 		}
 	}
 }
