@@ -16,7 +16,6 @@ func main() {
 		fmt.Println("--order")
 		fmt.Println("  -o")
 		fmt.Println("	This flag will behave like a boolean, if it is called it will order the argument.")
-		fmt.Println()
 	} else {
 		for i := 0; i < len(fichier); i++ {
 			if len(fichier[i]) > 9 && fichier[i][:9] == "--insert=" {
