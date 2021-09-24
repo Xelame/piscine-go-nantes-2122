@@ -1,14 +1,12 @@
 package piscine
 
-import "github.com/01-edu/z01"
-
 func ConvertBase(number, baseFrom, baseTo string) string {
 	result := []rune{}
 	nbr := AtoiBase(number, baseFrom)
 	if nbr == -9223372036854775808 {
 		nbr = 223372036854775808
-		z01.PrintRune('-')
-		z01.PrintRune('9')
+		result = append(result, '-')
+		result = append(result, '9')
 	} else if nbr < 0 {
 		nbr *= -1
 		result = append(result, '-')
