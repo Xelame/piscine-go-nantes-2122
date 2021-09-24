@@ -10,12 +10,12 @@ import (
 func main() {
 	fichier := os.Args[1:]
 	if len(fichier) == 0 || fichier[0] == "--help" || fichier[0] == "-h" {
-		fmt.Println("--help")
-		fmt.Println("  -h")
-		fmt.Println("    This flag inserts the string into the string passed as argument.")
+		fmt.Println("--insert")
+		fmt.Println("  -i")
+		fmt.Println("	This flag inserts the string into the string passed as argument.")
 		fmt.Println("--order")
 		fmt.Println("  -o")
-		fmt.Println("    This flag will behave like a boolean, if it is called it will order the argument.")
+		fmt.Println("	This flag will behave like a boolean, if it is called it will order the argument.")
 		fmt.Println()
 	} else {
 		for i := 0; i < len(fichier); i++ {
