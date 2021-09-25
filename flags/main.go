@@ -15,12 +15,14 @@ func main() {
 		for i := 0; i < len(fichier); i++ {
 			if len(fichier[i]) > 9 && fichier[i][:9] == "--insert=" {
 				fichier[len(fichier)-1] = Concat(fichier[len(fichier)-1], fichier[i][9:])
+				fichier[i] = ""
 			} else if len(fichier[i]) > 3 && fichier[i][:3] == "-i=" {
 				fichier[len(fichier)-1] = Concat(fichier[len(fichier)-1], fichier[i][3:])
+				fichier[i] = ""
 			}
 			if fichier[i] == "--order" || fichier[i] == "-o" {
 				for v := 0; v < len(fichier); v++ {
-					if !(fichier[v] == "--order" || fichier[v] == "-o" || (len(fichier[v]) > 9 && fichier[v][:9] == "--insert=") || (len(fichier[v]) > 3 && fichier[v][:3] == "-i=")) {
+					if !(fichier[v] == "--order" || fichier[v] == "-o") {
 						temp := []rune(fichier[i+1])
 						SortTable(temp)
 						fichier[i+1] = string(temp)
