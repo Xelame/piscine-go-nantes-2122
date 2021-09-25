@@ -15,10 +15,8 @@ func main() {
 		for i := 0; i < len(fichier); i++ {
 			if len(fichier[i]) > 9 && fichier[i][:9] == "--insert=" {
 				fichier[i] = fichier[i][9:]
-				SwapString(&fichier[i], &fichier[i+1])
 			} else if len(fichier[i]) > 3 && fichier[i][:3] == "-i=" {
 				fichier[i] = fichier[i][3:]
-				SwapString(&fichier[i], &fichier[i+1])
 			}
 			if fichier[i] == "--order" || fichier[i] == "-o" {
 				for v := 0; v < len(fichier); v++ {
@@ -52,9 +50,5 @@ func SortTable(table []rune) {
 }
 
 func Swap(a *rune, b *rune) {
-	*a, *b = *b, *a
-}
-
-func SwapString(a *string, b *string) {
 	*a, *b = *b, *a
 }
