@@ -20,7 +20,7 @@ func main() {
 			}
 			if fichier[i] == "--order" || fichier[i] == "-o" {
 				for v := 0; v < len(fichier); v++ {
-					if !(fichier[v] == "--order" || fichier[v] == "-o") {
+					if !(fichier[v] == "--order" || fichier[v] == "-o" || (len(fichier[i]) > 9 && fichier[i][:9] == "--insert=") || (len(fichier[i]) > 3 && fichier[i][:3] == "-i=")) {
 						temp := []rune(fichier[i+1])
 						SortTable(temp)
 						fichier[i+1] = string(temp)
