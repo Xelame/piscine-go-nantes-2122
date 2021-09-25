@@ -14,9 +14,9 @@ func main() {
 	} else {
 		for i := 0; i < len(fichier); i++ {
 			if len(fichier[i]) > 9 && fichier[i][:9] == "--insert=" {
-				fichier[i] = fichier[i][9:]
+				fichier[len(fichier)-1] = Concat(fichier[len(fichier)-1], fichier[i][9:])
 			} else if len(fichier[i]) > 3 && fichier[i][:3] == "-i=" {
-				fichier[i] = fichier[i][3:]
+				fichier[len(fichier)-1] = Concat(fichier[len(fichier)-1], fichier[i][3:])
 			}
 			if fichier[i] == "--order" || fichier[i] == "-o" {
 				for v := 0; v < len(fichier); v++ {
@@ -51,4 +51,8 @@ func SortTable(table []rune) {
 
 func Swap(a *rune, b *rune) {
 	*a, *b = *b, *a
+}
+
+func Concat(s1 string, s2 string) string {
+	return s1 + s2
 }
