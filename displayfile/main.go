@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	if len(os.Args[1:]) == 1 {
+	if !(len(os.Args[1:]) < 1) {
 		if !(len(os.Args[1:]) > 1) {
 			file, _ := os.Open(os.Args[1])
 			fi, _ := file.Stat()
