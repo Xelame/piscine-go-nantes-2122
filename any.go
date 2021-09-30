@@ -1,9 +1,9 @@
 package piscine
 
 func Any(f func(string) bool, a []string) bool {
-	isTrue := true
+	isTrue := false
 	for _, value := range a {
-		if isTrue {
+		if !isTrue {
 			isTrue = f(value)
 		}
 	}
