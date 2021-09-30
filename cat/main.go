@@ -17,7 +17,7 @@ func main() {
 		for _, arg := range os.Args[1:] {
 			b, err := ioutil.ReadFile(arg)
 			if err != nil {
-				errorMessage := "ERROR:" + err.Error()[4:]
+				errorMessage := "ERROR: " + err.Error()
 				for _, letter := range errorMessage {
 					z01.PrintRune(letter)
 				}
