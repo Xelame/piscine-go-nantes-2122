@@ -8,9 +8,10 @@ func IsSorted(f func(a, b int) int, a []int) bool {
 		} else {
 			count--
 		}
-		if !(count == len(a)-1 || count == -len(a)+1) {
-			return false
-		}
 	}
-	return true
+	if !(count == len(a)-1 || count == -len(a)+1) {
+		return false
+	} else {
+		return true
+	}
 }
