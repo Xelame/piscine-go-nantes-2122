@@ -15,7 +15,7 @@ func main() {
 		}
 	} else {
 		for _, arg := range os.Args[1:] {
-			b, err := ioutil.ReadFile(arg)
+			_, err := ioutil.ReadFile(arg)
 			if err != nil {
 				errorMessage := "ERROR: " + err.Error()
 				for _, letter := range errorMessage {
@@ -23,7 +23,7 @@ func main() {
 				}
 				z01.PrintRune('\n')
 			}
-			os.Stdout.Write(b)
+			os.Exit(1)
 		}
 	}
 }
