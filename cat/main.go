@@ -1,28 +1,29 @@
 package main
 
 import (
+	"io"
+	"io/ioutil"
 	"os"
 
 	"github.com/01-edu/z01"
 )
 
 func main() {
-	if len(os.Args[1:]) <= 2 {
-		file1, _ := os.Open(os.Args[1])
-		fi1, _ := file1.Stat()
-		arr1 := make([]byte, fi1.Size())
-		file1.Read(arr1)
-		for _, value := range arr1 {
-			z01.PrintRune(rune(value))
+	if len(os.Args) == 1 {
+		if _, err := io.Copy(os.Stdout, os.Stdin); err != nil {
+			panic(err)
 		}
-	}
-	if len(os.Args[1:]) == 2 {
-		file2, _ := os.Open(os.Args[2])
-		fi2, _ := file2.Stat()
-		arr2 := make([]byte, fi2.Size())
-		file2.Read(arr2)
-		for _, value := range arr2 {
-			z01.PrintRune(rune(value))
+	} else {
+		for _, arg := range os.Args[1:] {
+			b, err := ioutil.ReadFile(arg)
+			if err != nil {
+				errorMessage := "ERROR:" + err.Error()[4:]
+				for _, letter := range errorMessage {
+					z01.PrintRune(letter)
+				}
+				z01.PrintRune('\n')
+			}
+			os.Stdout.Write(b)
 		}
 	}
 }
