@@ -2,28 +2,32 @@ package main
 
 import (
 	"os"
-
-	"github.com/01-edu/z01"
 )
 
 func main() {
-	args := os.Args[:1]
+	args := os.Args[1:]
 	number := 0
 	if len(args) == 3 {
 		switch operator := args[1]; operator {
 		case "+":
 			number = Atoi(args[0]) + Atoi(args[2])
+			break
 		case "-":
 			number = Atoi(args[0]) - Atoi(args[2])
+			break
 		case "/":
 			number = Atoi(args[0]) / Atoi(args[2])
+			break
 		case "*":
 			number = Atoi(args[0]) * Atoi(args[2])
+			break
 		case "%":
 			number = Atoi(args[0]) % Atoi(args[2])
+			break
 		}
+		str := PrintNbr(number)
+		os.Stdout.WriteString(str)
 	}
-	PrintNbr(number)
 }
 
 func Atoi(aString string) int {
@@ -49,14 +53,10 @@ func Atoi(aString string) int {
 	}
 }
 
-func PrintNbr(number int) {
-	if number == -9223372036854775808 {
-		number = 223372036854775808
-		z01.PrintRune('-')
-		z01.PrintRune('9')
-	}
+func PrintNbr(number int) string {
+	Str := []rune{}
 	if number < 0 {
-		z01.PrintRune('-')
+		Str = append(Str, '-')
 		number = -number
 	}
 	var reversedList []int
@@ -66,6 +66,7 @@ func PrintNbr(number int) {
 	}
 	reversedList = append(reversedList, number%10)
 	for end := len(reversedList) - 1; end >= 0; end-- {
-		z01.PrintRune(rune(48 + reversedList[end]))
+		Str = append(Str, rune(48+reversedList[end]))
 	}
+	return string(Str)
 }
