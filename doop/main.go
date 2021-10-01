@@ -26,7 +26,9 @@ func main() {
 			break
 		}
 		str := PrintNbr(number)
-		os.Stdout.WriteString(str)
+		if str != "(" && str != "-(" {
+			os.Stdout.WriteString(str)
+		}
 	}
 }
 
