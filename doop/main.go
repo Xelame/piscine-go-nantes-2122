@@ -70,5 +70,6 @@ func PrintNbr(number int) string {
 	for end := len(reversedList) - 1; end >= 0; end-- {
 		Str = append(Str, rune(48+reversedList[end]))
 	}
+	Str = append(Str, '\n')
 	return string(Str)
 }
