@@ -12,24 +12,39 @@ func main() {
 			switch operator := args[1]; operator {
 			case "+":
 				number = Atoi(args[0]) + Atoi(args[2])
+				str := PrintNbr(number)
+				if str != "(" && str != "-(" {
+					os.Stdout.WriteString(str)
+				}
 				break
 			case "-":
 				number = Atoi(args[0]) - Atoi(args[2])
+				str := PrintNbr(number)
+				if str != "(" && str != "-(" {
+					os.Stdout.WriteString(str)
+				}
 				break
 			case "/":
 				number = Atoi(args[0]) / Atoi(args[2])
+				str := PrintNbr(number)
+				if str != "(" && str != "-(" {
+					os.Stdout.WriteString(str)
+				}
 				break
 			case "*":
 				number = Atoi(args[0]) * Atoi(args[2])
+				str := PrintNbr(number)
+				if str != "(" && str != "-(" {
+					os.Stdout.WriteString(str)
+				}
 				break
 			case "%":
 				number = Atoi(args[0]) % Atoi(args[2])
+				str := PrintNbr(number)
+				if str != "(" && str != "-(" {
+					os.Stdout.WriteString(str)
+				}
 				break
-			}
-
-			str := PrintNbr(number)
-			if str != "(" && str != "-(" {
-				os.Stdout.WriteString(str)
 			}
 		}
 	}
