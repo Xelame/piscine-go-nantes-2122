@@ -25,10 +25,14 @@ func main() {
 				}
 				break
 			case "/":
-				number = Atoi(args[0]) / Atoi(args[2])
-				str := PrintNbr(number)
-				if str != "(" && str != "-(" {
-					os.Stdout.WriteString(str)
+				if Atoi(args[2]) != 0 {
+					number = Atoi(args[0]) / Atoi(args[2])
+					str := PrintNbr(number)
+					if str != "(" && str != "-(" {
+						os.Stdout.WriteString(str)
+					}
+				} else {
+					os.Stdout.WriteString("No division by 0")
 				}
 				break
 			case "*":
