@@ -32,7 +32,7 @@ func main() {
 						os.Stdout.WriteString(str)
 					}
 				} else {
-					os.Stdout.WriteString("No division by 0")
+					os.Stdout.WriteString("No division by 0\n")
 				}
 				break
 			case "*":
