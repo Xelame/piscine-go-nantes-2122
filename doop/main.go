@@ -50,7 +50,7 @@ func main() {
 						os.Stdout.WriteString(str)
 					}
 				} else {
-					os.Stdout.WriteString("No modulo 0\n")
+					os.Stdout.WriteString("No modulo by 0\n")
 				}
 				break
 			}
