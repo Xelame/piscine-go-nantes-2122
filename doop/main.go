@@ -8,22 +8,24 @@ func main() {
 	args := os.Args[1:]
 	number := 0
 	if len(args) == 3 {
-		switch operator := args[1]; operator {
-		case "+":
-			number = Atoi(args[0]) + Atoi(args[2])
-			break
-		case "-":
-			number = Atoi(args[0]) - Atoi(args[2])
-			break
-		case "/":
-			number = Atoi(args[0]) / Atoi(args[2])
-			break
-		case "*":
-			number = Atoi(args[0]) * Atoi(args[2])
-			break
-		case "%":
-			number = Atoi(args[0]) % Atoi(args[2])
-			break
+		if (Atoi(args[0]) != 0 && args[0] != "0") || (Atoi(args[2]) != 0 && args[2] != "0") {
+			switch operator := args[1]; operator {
+			case "+":
+				number = Atoi(args[0]) + Atoi(args[2])
+				break
+			case "-":
+				number = Atoi(args[0]) - Atoi(args[2])
+				break
+			case "/":
+				number = Atoi(args[0]) / Atoi(args[2])
+				break
+			case "*":
+				number = Atoi(args[0]) * Atoi(args[2])
+				break
+			case "%":
+				number = Atoi(args[0]) % Atoi(args[2])
+				break
+			}
 		}
 		str := PrintNbr(number)
 		if str != "(" && str != "-(" {
