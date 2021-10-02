@@ -13,14 +13,14 @@ func main() {
 			case "+":
 				number = Atoi(args[0]) + Atoi(args[2])
 				str := PrintNbr(number)
-				if str != "(" && str != "-(" {
+				if str != "(\n" && str != "-(\n" {
 					os.Stdout.WriteString(str)
 				}
 				break
 			case "-":
 				number = Atoi(args[0]) - Atoi(args[2])
 				str := PrintNbr(number)
-				if str != "(" && str != "-(" {
+				if str != "(\n" && str != "-(\n" {
 					os.Stdout.WriteString(str)
 				}
 				break
@@ -28,7 +28,7 @@ func main() {
 				if Atoi(args[2]) != 0 {
 					number = Atoi(args[0]) / Atoi(args[2])
 					str := PrintNbr(number)
-					if str != "(" && str != "-(" {
+					if str != "(\n" && str != "-(\n" {
 						os.Stdout.WriteString(str)
 					}
 				} else {
@@ -38,7 +38,7 @@ func main() {
 			case "*":
 				number = Atoi(args[0]) * Atoi(args[2])
 				str := PrintNbr(number)
-				if str != "(" && str != "-(" {
+				if str != "(\n" && str != "-(\n" {
 					os.Stdout.WriteString(str)
 				}
 				break
@@ -46,7 +46,7 @@ func main() {
 				if Atoi(args[2]) != 0 {
 					number = Atoi(args[0]) % Atoi(args[2])
 					str := PrintNbr(number)
-					if str != "(" && str != "-(" {
+					if str != "(\n" && str != "-(\n" {
 						os.Stdout.WriteString(str)
 					}
 				} else {
