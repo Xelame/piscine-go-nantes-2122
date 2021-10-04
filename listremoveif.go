@@ -20,7 +20,7 @@ func ListRemoveIf(l *List, data_ref interface{}) {
 			l.Head = l.Head.Next
 			aPointer.Next = l.Head
 		}
-		for aPointer.Next != nil && aPointer.Next.Next != nil {
+		for aPointer.Next != nil {
 			if aPointer.Next.Data == data_ref {
 				aPointer.Next = aPointer.Next.Next
 			}
