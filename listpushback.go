@@ -19,8 +19,8 @@ func ListPushBack(l *List, data interface{}) {
 		l.Tail = aNodel
 	} else {
 		// Else add the nodel at the end
-		l.Head.Next = aNodel
+		l.Tail.Next = aNodel
 		// Update the end list pointer
-		l.Head = aNodel
+		l.Tail = aNodel
 	}
 }
