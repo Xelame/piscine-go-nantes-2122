@@ -14,7 +14,7 @@ type List struct {
 
 func ListForEach(l *List, f func(*NodeL)) {
 	var currentnode *NodeL = l.Head
-	if l.Head != nil && currentnode.Next != nil {
+	if l.Head != nil {
 		f(currentnode)
 		currentnode = currentnode.Next
 	}
