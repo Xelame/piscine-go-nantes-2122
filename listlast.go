@@ -13,5 +13,8 @@ type List struct {
 */
 
 func ListLast(l *List) interface{} {
-	return l.Tail
+	if l.Head == nil {
+		return nil
+	}
+	return l.Tail.Data
 }
