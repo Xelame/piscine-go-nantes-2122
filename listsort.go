@@ -6,14 +6,10 @@ type NodeI struct {
 }
 
 func ListSort(l *NodeI) *NodeI {
-	if l == nil {
-		return nil
-	}
-
 	var currentnode *NodeI = l
 	var previous *NodeI = nil
 	var forward *NodeI
-	for currentnode.Next != nil {
+	for currentnode.Next != nil && currentnode != nil {
 		forward = currentnode.Next
 		if currentnode.Data > forward.Data {
 			currentnode.Next = previous
