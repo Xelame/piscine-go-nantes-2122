@@ -13,24 +13,18 @@ type List struct {
 */
 
 func ListRemoveIf(l *List, data_ref interface{}) {
-	var aPointer *NodeL = nil
-	if l.Head != nil {
-		if l.Head.Data == data_ref {
-			aPointer = l.Head
-			l.Head = l.Head.Next
-			aPointer.Next = l.Head
+	temp := l.Head
+	prev := l.Head
+
+	for temp != nil && temp.Data == data_ref {
+		l.Head = temp.Next
+		temp = l.Head
+	}
+	for temp != nil {
+		if temp.Data != data_ref {
+			prev = temp
 		}
-		for aPointer.Next != nil {
-			if aPointer.Next.Data == data_ref {
-				if aPointer.Next == l.Tail {
-					aPointer.Next = nil
-				} else {
-					aPointer.Next = aPointer.Next.Next
-				}
-			}
-			if aPointer.Next != nil && aPointer.Next.Data != data_ref {
-				aPointer = aPointer.Next
-			}
-		}
+		prev.Next = temp.Next
+		temp = prev.Next
 	}
 }
