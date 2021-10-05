@@ -9,7 +9,7 @@ func BTreeInsertData(root *TreeNode, data string) *TreeNode {
 	if root == nil {
 		return &TreeNode{Data: data}
 	}
-	if Atoi(root.Data) > Atoi(data) {
+	if root.Data > data {
 		root.Left = BTreeInsertData(root.Left, data)
 		root.Left.Parent = root
 	} else {
