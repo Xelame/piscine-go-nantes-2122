@@ -5,20 +5,30 @@ type NodeI struct {
 	Next *NodeI
 }
 
+// A commenter
 func ListSort(l *NodeI) *NodeI {
-	var currentnode *NodeI = l
-	var previous *NodeI = nil
-	var forward *NodeI
-	for currentnode.Next != nil && currentnode != nil {
-		forward = currentnode.Next
-		if currentnode.Data > forward.Data {
-			currentnode.Next = previous
-			previous = currentnode
-			currentnode = forward
-		} else {
-			currentnode = currentnode.Next
-		}
+	head := l
+	if head == nil {
+		return nil
 	}
-	currentnode.Next = previous
-	return currentnode
+	head.Next = ListSort(head.Next)
+
+	if head.Next != nil && head.Data > head.Next.Data {
+		head = move(head)
+	}
+	return head
+}
+
+func move(l *NodeI) *NodeI {
+	p := l
+	n := l.Next
+	ret := n
+
+	for n != nil && l.Data > n.Data {
+		p = n
+		n = n.Next
+	}
+	p.Next = l
+	l.Next = n
+	return ret
 }
