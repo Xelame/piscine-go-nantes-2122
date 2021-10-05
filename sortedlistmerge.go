@@ -1,5 +1,6 @@
 package piscine
 
+// A commenter
 func SortedListMerge(n1 *NodeI, n2 *NodeI) *NodeI {
 	if n1 == nil {
 		return n2
